@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficas 2d javascript</title>
+    <style>
+        #micanvas
+        {
+            border: dotted 5px yellow;
+            background-color: green;
+        }
+        #canvas-container 
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <script>
+        window.onload= function()
+        {
+            var canvas= document.getElementById("micanvas");
+
+            const BASE = 500;
+            const ALTURA = 300;
+
+            canvas.width = BASE;
+            canvas.heigth =ALTURA;
+
+
+            if(canvas && canvas.getContext)
+            {
+                var ctx = canvas.getContext("2d");
+
+                if (ctx)
+                {
+                    //alert("Bienvenido al canvas ");
+                    //Aqui vamos a grficar
+
+                    //color y ancho de linea
+                    ctx.strokeStyle="black"
+                    ctx.lineWidth=5;
+
+                    //dibujamos una linea
+                    ctx.beginPath();//iniciamos linea o nuevo trazo
+                    ctx.moveTo(250,0);
+                    ctx.lineTo(BASE,ALTURA);
+                    ctx.stroke();
+
+                    // dibujamos otra linea
+                    ctx.strokeStyle="red"
+                    ctx.beginPath();//iniciamos linea o nuevo trazo
+                    ctx.moveTo(0,ALTURA);
+                    ctx.lineTo(BASE,0);
+                    ctx.stroke();
+
+                    //Otro dibujo
+                    ctx.strokeStyle="yellow";
+                    ctx.fillStyle = "yelow";
+                    ctx.beginPath();
+                    ctx.moveTo(0,ALTURA/2);
+                    ctx.lineTo(BASE/2,0);
+                    ctx.lineTo(BASE,ALTURA/2);
+                    ctx.fill();
+                    ctx.stroke();
+
+
+
+
+                    
+
+
+                }
+                else
+                {
+                    alert("Error al crear el contexto");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Graficas 2D con HTML y javascript</h1>
+    <canvas id="micanvas" width="500px" height="300px">
+        Tu navegador no soporta canvas
+        <div id="canvas-container">
+            <canvas id="miCanvas">
+                Tu navegador no soporta canvas
+            </canvas>
+        </div>
+    </canvas>
+    
+</body>
+</html>
+

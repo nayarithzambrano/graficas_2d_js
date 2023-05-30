@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficas 2d Javascript</title>
+    
+<style>
+    html{
+        height: 100vh;
+    }
+    body{
+        height: 100vh;
+    }
+   #canvas-container 
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+   #miCanvas
+    {
+        border: dotted 5px yellow;
+        background-color: green;
+    }
+</style>
+<script>
+    window.onload = function()
+    {
+        var canvas = document.getElementById("miCanvas");
+        
+        const BASE = 700;
+        const ALTURA = 600
+
+        canvas.width = BASE;
+        canvas.heigth = ALTURA;
+        
+        if(canvas && canvas.getContext)
+        {
+            var ctx = canvas.getContext("2d");
+
+            if(ctx)
+            {
+                //alert("Bienvenido al canvas")
+                // Aqui vamos a graficar
+
+               ctx.lineWidth = 10;
+               ctx.fillStyle = "yellow"
+               ctx.strokeStyle = "red";
+
+              
+
+               // modificamos los colores
+               ctx.fillStyle = "white";
+               ctx.strokeStyle = "grey";
+
+               // segunda cuadro
+               ctx.fillRect(200,80,100,100);
+               ctx.strokeRect(200,80,100,100);
+
+               ctx.fillStyle = 'yellow'
+                    //rectangulos
+                    ctx.fillRect(180,48,140,30)
+                    ctx.fillStyle = "black";
+                    ctx.fillRect(190,15,120,33)
+                    ctx.fillStyle = "red";
+                    ctx.fillRect(80,185,240,130)
+                    //Ruedas
+                    ctx.strokeStyle = "white";
+                    ctx.fillStyle = "black";
+                    ctx.lineWidth = 5;
+                    ctx.beginPath();
+                    ctx.arc(300,320,35,0,2*Math.PI, false)
+                    ctx.fill();
+                    ctx.stroke();
+                    //
+                    ctx.strokeStyle = "white";
+                    ctx.fillStyle = "black";
+                    ctx.lineWidth = 5;
+                    ctx.beginPath();
+                    ctx.arc(210,320,35,0,2*Math.PI, false)
+                    ctx.fill();
+                    ctx.stroke();
+                    //
+                    ctx.strokeStyle = "white";
+                    ctx.fillStyle = "black";
+                    ctx.lineWidth = 5;
+                    ctx.beginPath();
+                    ctx.arc(120,320,35,0,2*Math.PI, false)
+                    ctx.fill();
+                    ctx.stroke();
+                    //humo
+                    ctx.fillStyle = 'balck'
+                    ctx.fillRect(95,115,50,70);
+                    ctx.fillRect(70,82,100,33)
+                    ctx.fillStyle = "black";
+                    
+                    ctx.fillRect(60,190,20,110);
+                    ctx.fillStyle = "withe";
+                    ctx.fillRect(20,180,40,130);
+                    //
+                    ctx.fillStyle = 'yellow'
+                    ctx.fillRect(135,315,55,20)
+                    ctx.fillRect(230,315,55,20)
+                    //
+                    ctx.fillStyle = 'RED'
+                    ctx.fillText("Nayarith", BASE/2,ALTURA/2);
+                    ctx.strokeText("Nayarith",BASE/2,ALTURA/2)
+                   
+                    
+                  
+
+
+              
+            }
+            else
+            {
+                alert("Error al crear el contexto")
+            }
+        }
+    }
+
+</script>
+
+
+</head>
+<body>
+    <h1>Graficas 2D con HTML y Javascript</h1>
+    <div id="canvas-container">
+        <canvas id="miCanvas" width="700" height="600">
+            Tu navegador no soporta canvas
+        </canvas>
+    </div>
+</body>
+</html>

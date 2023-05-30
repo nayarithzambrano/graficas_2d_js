@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficas 2d Javascript</title>
+<style>
+    #miCanvas
+    {
+     
+        background-color: red;
+    }
+</style>
+<script>
+    window.onload = function()
+    {
+        var canvas = document.getElementById("miCanvas");
+        
+        const BASE = 500;
+        const ALTURA =100;
+
+        canvas.width = BASE;
+        canvas.heigth = ALTURA;
+        
+        if(canvas && canvas.getContext)
+        {
+            var ctx = canvas.getContext("2d");
+
+            if(ctx)
+            {
+                //alert("Bienvenido al canvas")
+                // Aqui vamos a graficar
+
+                //Definicion de colores
+                //ctx.fillStyle="yellow";// Define color de relleno
+                //ctx.stroKeStyle ="#ff0000"// define color de border
+                //ctx.lineWidth = 5; // define grosor de la linea
+
+                // Rectangulo que cubra medio canvas
+                ctx.fillStyle = 'pink';
+                ctx.strokeRect(BASE/2,0,BASE/2,ALTURA);
+
+                // Dibujar rectangulo 
+                ctx.fillRect(50,50,00,00);
+                ctx.stroKeRect(50,50,00,00);
+
+                // Dibujar otro rectangulo
+                ctx.fillStyle = "rgba(250,0,0,0.3)";
+                ctx.fillRect(50,50,00,00);
+                //ctx.stroKeRect(200,50,100,100);
+            }
+            else
+            {
+                alert("Error al crear el contexto")
+            }
+        }
+    }
+
+</script>
+
+
+</head>
+<body>
+    <h1>Graficas 2D con HTML y Javascript</h1>
+    <canvas id="miCanvas">
+        Tu navegador no soporta canvas
+        </canvas>
+
+</body>
+</html>

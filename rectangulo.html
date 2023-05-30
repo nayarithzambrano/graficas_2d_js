@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficas 2d javascript</title>
+    <style>
+        #micanvas
+        {
+            border: dotted 5px yellow;
+            background-color: green;
+        }
+    </style>
+    <script>
+        window.onload= function()
+        {
+            var canvas= document.getElementById("micanvas");
+
+            const BASE = 500;
+            const ALTURA = 300;
+
+            canvas.width = BASE;
+            canvas.heigth =ALTURA;
+
+
+            if(canvas && canvas.getContext)
+            {
+                var ctx = canvas.getContext("2d");
+
+                if (ctx)
+                {
+                    //alert("Bienvenido al canvas ");
+                    //Aqui vamos a grficar
+
+                    //Definición de colores
+                    ctx.fillStyle ="yellow"; //define color de relleno 
+                    ctx.strokeStyle ="red";//define color de borde
+                    ctx.lineBASE = 5; //define el ancho de la linea 
+
+                    // rectangulo que cubra medio canvas
+                    ctx.fillStyle="pink";
+                    ctx.strokeRect(canva.BASE/2,0,canvas.BASE/2,canvas.ALTURA);
+
+                    // Dibujar un rectangulo
+                    ctx.fillRect(50,50,100,100);
+                    ctx.strokeRect(50,50,100,100);
+
+                    //Dibujar otro rectangulo 
+                    ctx.fillStyle = "rgba(250,0,0,0,5)";
+                    ctx.fillRect(200,50,100,100);
+                    ctx.strokeRect(200,50,100,100);
+
+
+                }
+                else
+                {
+                    alert("Error al crear el contexto");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Graficas 2D con HTML y javascript</h1>
+    <canvas id="micanvas" width="500px" height="300px">
+        Tu navegador no soporta canvas
+    </canvas>
+    
+</body>
+</html>

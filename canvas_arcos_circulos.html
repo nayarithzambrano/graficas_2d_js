@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficas 2d Javascript</title>
+<style>
+    html{
+        height: 100vh;
+    }
+    body{
+        height: 100vh;
+    }
+   #canvas-container 
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+   #miCanvas
+    {
+        border: dotted 5px yellow;
+        background-color: white;
+    }
+</style>
+<script>
+    window.onload = function()
+    {
+        var canvas = document.getElementById("miCanvas");
+        
+        const BASE = 600;
+        const ALTURA = 300;
+
+        canvas.width = BASE;
+        canvas.heigth = ALTURA;
+        
+        if(canvas && canvas.getContext)
+        {
+            var ctx = canvas.getContext("2d");
+
+            if(ctx)
+            {
+                //alert("Bienvenido al canvas")
+                // Aqui vamos a graficar
+
+                //Caracteristicas de las lineas
+                ctx.lineWidth = 10;
+                ctx.strokeStyle = "yellow";
+                ctx.fillStyle = "purple";
+
+                // arco 1
+                ctx.strokeStyle = "white";
+                ctx.fillStyle = "grey";
+                ctx.lineWidth = 5;
+                ctx.beginPath();
+                ctx.arc(100,170,95,0,2*Math.PI, false)
+                ctx.fill();
+               ctx.stroke();
+
+               
+
+                 // arco 2
+                 ctx.strokeStyle = "white";
+                 ctx.fillStyle = "green";
+                ctx.lineWidth = 5;
+                ctx.beginPath();
+                ctx.arc(200,150,90,0,2*Math.PI, false)
+                ctx.fill();
+               ctx.stroke();
+
+               
+
+                  // arco 3
+                ctx.strokeStyle = "white";
+                ctx.fillStyle = "blue";
+                ctx.lineWidth = 5;
+                ctx.beginPath();
+                ctx.arc(300,154,85,0,2*Math.PI, false)
+                ctx.fill();
+               ctx.stroke();
+
+               // centro arco 3
+               
+
+                // arco 4
+                ctx.strokeStyle = "white";
+                ctx.fillStyle = "red";
+                ctx.lineWidth = 5;
+                ctx.beginPath();
+                ctx.arc(400,122,75,0,2*Math.PI, false)
+                ctx.fill();
+               ctx.stroke();
+
+               // centro arco 4
+               
+
+                // arco 5
+                ctx.strokeStyle = "white";
+                ctx.fillStyle = "yellow";
+                ctx.lineWidth = 5;
+                ctx.beginPath();
+                ctx.arc(500,80,60,0,2*Math.PI, false)
+                ctx.fill();
+               ctx.stroke();
+
+               // centro arco 5
+               
+               
+                 // arco 5
+                 ctx.strokeStyle = "white";
+                 ctx.fillStyle = "black";
+                ctx.lineWidth = 5;
+                ctx.beginPath();
+                ctx.arc(500,70,10,0,2*Math.PI, false)
+                ctx.fill();
+               ctx.stroke();
+
+               // centro arco 5
+            
+
+
+
+
+
+
+
+                 // linea horizontal centro circulos
+                 //ctx.lineWidth = 1;
+               //ctx.strokeStyle = "black";
+               //ctx.beginPath();
+               //ctx.moveTo(0,150);
+               //ctx.lineTo(BASE,150);
+              // ctx.stroke();
+            }
+            else
+            {
+                alert("Error al crear el contexto")
+            }
+        }
+    }
+
+</script>
+
+
+</head>
+<body>
+    <h1>Graficas 2D con HTML y Javascript</h1>
+    <div id="canvas-container">
+        <canvas id="miCanvas" width="500" height="300">
+            Tu navegador no soporta canvas
+        </canvas>
+    </div>
+</body>
+</html>
+

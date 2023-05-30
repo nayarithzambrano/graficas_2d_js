@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficas 2d Javascript</title>
+<style>
+    html{
+        height: 100vh;
+    }
+    body{
+        height: 100vh;
+    }
+   #canvas-container 
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+   #miCanvas
+    {
+        border: dotted 5px yellow;
+        background-color: green;
+    }
+</style>
+<script>
+    window.onload = function()
+    {
+        var canvas = document.getElementById("miCanvas");
+        
+        const BASE = 500;
+        const ALTURA = 300;
+
+        canvas.width = BASE;
+        canvas.heigth = ALTURA;
+        
+        if(canvas && canvas.getContext)
+        {
+            var ctx = canvas.getContext("2d");
+
+            if(ctx)
+            {
+                //alert("Bienvenido al canvas")
+                // Aqui vamos a graficar
+
+                var imagen = new Image();
+                //
+                function procesaImagen()
+                {
+                    ctx.drawImage(imagen,BASE/2,ALTURA/2);
+                }
+                //
+                imagen.src = "img/nave3.png";
+                imagen.onload = function(e){
+                    procesaImagen();
+                }
+            }
+            else
+            {
+                alert("Error al crear el contexto")
+            }
+        }
+    }
+
+</script>
+
+
+</head>
+<body>
+    <h1>Graficas 2D con HTML y Javascript</h1>
+    <div id="canvas-container">
+        <canvas id="miCanvas" width="500" height="300">
+            Tu navegador no soporta canvas
+        </canvas>
+    </div>
+</body>
+</html>
